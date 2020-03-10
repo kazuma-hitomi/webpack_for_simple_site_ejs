@@ -1,0 +1,10 @@
+{
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  },
+  "extends": "airbnb-base",
+  "parser": "babel-eslint"
+}

@@ -1,0 +1,76 @@
+// カラー設定
+$defaultFontColor: #000;
+$keyColor: #ffff28;
+$subColor: #000;
+$transparent: rgba(0, 0, 0, 0);
+
+// フォント設定
+$h1FontSize: 3rem;
+$h2FontSize: 2.6rem;
+$h3FontSize: 2.4rem;
+$h4FontSize: 2.2rem;
+$xLargeFontSize: 2rem;
+$largeFontSize: 1.8rem;
+$mediumFontSize: 1.6rem;
+$smallFontSize: 1.4rem;
+$xSmallFontSize: 1.2rem;
+
+// line-height
+$clearLineHeight: 1;
+$smallLineHeight: 1.2;
+$mediumLineHeight: 1.4;
+$largeLineHeight: 1.6;
+
+// border-radius
+$borderRadius_5px: 5px;
+$borderRadius_10px: 10px;
+
+// transition
+$defaultTransition: .3s;
+$littleSlowTransition: 1s;
+$slowTransition: 1.5s;
+
+// opcity
+$halfOpacity: .5;
+
+// easing
+$easing: cubic-bezier(0.19, 1, 0.22, 1);
+
+// 米印インデント調整
+@mixin indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+// 最大横幅設定
+@mixin tabletMaxWidth {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+@mixin pcMaxWidth {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// 横並び設定
+@mixin flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+// ブレイクポイント設定
+$breakPoints: (
+  'spHorizontal': 'screen and (min-width: 560px)',
+  'tabletVertical': 'screen and (min-width: 768px)',
+  'tabletHorizontal': 'screen and (min-width: 960px)',
+  'pc': 'screen and (min-width: 1025px)',
+);
+
+@mixin mq($breakPoint) {
+  @media #{map-get($breakPoints, $breakPoint)} {
+    @content;
+  }
+}
